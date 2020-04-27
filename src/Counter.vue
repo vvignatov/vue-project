@@ -1,20 +1,20 @@
 <template>
-	<h1>Counter: {{ counter }}</h1>
+	<div>
+		<h2>Counter: {{ counter }}</h2>
+		<button @click="counter++">Up counter</button>
+		<button @click="counter--">Sub counter</button>
+	</div>
 </template>
 
 <script>
-	import {eventEmitter} from './main'
-
 	export default {
 		data() {
 			return {
 				counter: 0
 			}
-		},
-		created() {
-			eventEmitter.$on('counterUpdated', (num) => {
-				this.counter += num
-			})
 		}
 	}
 </script>
+
+<style>
+</style>

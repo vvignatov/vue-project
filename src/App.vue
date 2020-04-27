@@ -1,12 +1,13 @@
 <template>
 	<div>
-		<h1>Parent: {{ carName }}</h1>
-		<appCar
-			:carName="carName"
-			:carYear="carYear"
-			:changeFunc="changeNameToAudi"
-			@nameChanged="carName = $event"
-		></appCar>
+		<app-filters></app-filters>
+
+		<app-directives></app-directives>
+
+		<app-car>
+			<h2 slot="title">{{ carName }}</h2>
+			<p slot="text">Lorem, ipsum dolor.</p>
+		</app-car>
 		<app-counter></app-counter>
 	</div>
 </template>
@@ -14,25 +15,25 @@
 <script>
 import Car from './Car.vue'
 import Counter from './Counter.vue'
+import AppDirectives from './AppDirectives.vue'
+import AppFilters from './AppFilters.vue'
+
 
 export default {
-	data () {
+	data() {
 		return {
-			carName: 'Ford',
-			carYear: 2019
-		}
-	},
-	methods: {
-		changeNameToAudi() {
-			this.carName = 'Audi'
+			carName: 'Ford'
 		}
 	},
 	components: {
 		appCar: Car,
-		appCounter: Counter
+		appCounter: Counter,
+		appDirectives: AppDirectives,
+		appFilters: AppFilters
 	}
 }
 </script>
 
-<style>
+<style scoped>
+
 </style>
