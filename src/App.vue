@@ -1,39 +1,58 @@
 <template>
 	<div>
-		<app-filters></app-filters>
+		<h1 class="title">{{ pageTitle }}</h1>
 
-		<app-directives></app-directives>
+		<div class="center  p-20">
+			<button @click="current = 'base'">Базовые</button>
+			<button @click="current = 'advance'">Дополнительные</button>
+			<button :disabled="true">Анимация</button>
+		</div>
 
-		<app-car>
-			<h2 slot="title">{{ carName }}</h2>
-			<p slot="text">Lorem, ipsum dolor.</p>
-		</app-car>
-		<app-counter></app-counter>
+		<app-base v-if="current === 'base'"></app-base>
+		<app-advance v-if="current === 'advance'"></app-advance>
 	</div>
 </template>
 
 <script>
-import Car from './Car.vue'
-import Counter from './Counter.vue'
-import AppDirectives from './AppDirectives.vue'
-import AppFilters from './AppFilters.vue'
+import Base from './containers/base/Base.vue'
+import Advance from './containers/advance/Advance.vue'
 
 
 export default {
 	data() {
 		return {
-			carName: 'Ford'
+			pageTitle: 'Основные примеры синтаксиса Vue.js',
+			current: 'base'
 		}
 	},
 	components: {
-		appCar: Car,
-		appCounter: Counter,
-		appDirectives: AppDirectives,
-		appFilters: AppFilters
+		appBase: Base,
+		appAdvance: Advance
 	}
 }
 </script>
 
-<style scoped>
-
+<style>
+	* {
+		font-family: sans-serif;
+		color: #333;
+	}
+	a {
+		color:blue;
+	}
+	button:disabled {
+		color: gainsboro;
+	}
+	.center {
+		text-align: center;
+	}
+	.title {
+		padding: 20px;
+		margin-bottom: 20px;
+		font-size: 40px;
+		text-align: center;
+	}
+	.p-20 {
+		margin-bottom: 20px;
+	}
 </style>
