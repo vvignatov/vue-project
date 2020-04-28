@@ -1,6 +1,6 @@
 <template>
 	<div class="component">
-		<div class="component__title">{{ title }}</div>
+		<div class="component__title">{{ title }} <a v-if="link" :href="link" target="_blank">Подробнее</a></div>
 		<div class="component__inner">
 			<slot></slot>
 		</div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	props: ['title']
+	props: ['title', 'link']
 }
 </script>
 
@@ -24,6 +24,9 @@ export default {
 	.component__title {
 		font: 30px;
 		margin-bottom: 20px;
+	}
+	.component__title a {
+		margin-left: 10px;
 	}
 	.component__inner {
 		padding: 0 20px;
