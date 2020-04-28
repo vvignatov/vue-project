@@ -22,7 +22,7 @@ export default {
 	data() {
 		return {
 			pageTitle: 'Основные примеры синтаксиса Vue.js',
-			current: 'base'
+			current: 'advance'
 		}
 	},
 	components: {
