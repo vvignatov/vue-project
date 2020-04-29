@@ -54,6 +54,14 @@
 				:carYear="carChild.year"
 			></app-child-emitter1>
 		</root-component>
+
+		<root-component :title="'7. Передача HTML компоненту (slot)'">
+			<app-car-html>
+				<p class="green">Tag without slot="title"</p>
+				<h3 slot="title" class="green">{{ carHtml.name }}</h3>
+				<p slot="text" class="green">Text from parent</p>
+			</app-car-html>
+		</root-component>
 	</div>
 </template>
 
@@ -67,6 +75,7 @@ import Child1 from './components/Child1.vue'
 import Child2 from './components/Child2.vue'
 import ChildEmitter1 from './components/ChildEmitter1'
 import ChildEmitter2 from './components/ChildEmitter2'
+import CarHtml from './components/CarHtml.vue'
 // import Directives from './components/Directives.vue'
 // import Filters from './components/Filters.vue'
 
@@ -93,6 +102,9 @@ export default {
 				name: 'Volvo',
 				year: 2016
 			},
+			carHtml: {
+				name: 'Ford'
+			},
 			counter: 0
 		}
 	},
@@ -110,7 +122,8 @@ export default {
 		appChild1: Child1,
 		appChild2: Child2,
 		appChildEmitter1: ChildEmitter1,
-		appChildEmitter2: ChildEmitter2
+		appChildEmitter2: ChildEmitter2,
+		appCarHtml: CarHtml
 		// appDirectives: Directives,
 		// appFilters: Filters,
 	}
