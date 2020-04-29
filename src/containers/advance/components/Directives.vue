@@ -1,8 +1,9 @@
 <template>
 	<div class="directives">
-		<h2 v-show="visible" v-colored:background.font="'blue'">{{ title }}</h2>
+		<!-- Директива v-colored подключается в файле main.js -->
+		<p v-show="visible" v-colored:background.font="'blue'">{{ title }}</p>
 
-		<h2 v-colored:color.font.delay="'blue'">{{ title2 }}</h2>
+		<p v-colored:color.font.delay="'blue'">{{ title2 }}</p>
 
 		<button
 			@click="visible = !visible"
@@ -18,7 +19,8 @@
 		</button>
 
 		<hr>
-		<h2 v-font>Local font directive</h2>
+		<!-- Директива v-font создается локально -->
+		<p v-font>Local font directive</p>
 	</div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
 	directives: {
 		font: {
 			bind(el, bindings, vnode) {
-				el.style.fontSize = '40px'
+				el.style.fontSize = '25px'
 			}
 		}
 	}
@@ -42,7 +44,4 @@ export default {
 </script>
 
 <style>
-	.directives {
-		min-height: 300px;
-	}
 </style>

@@ -1,11 +1,9 @@
 export default {
 	bind(el, bindings, vnode) {
-		console.log('bind')
-
 		const fontModifier = bindings.modifiers['font']
 
 		if (fontModifier) {
-			el.style.fontSize = '35px';
+			el.style.fontSize = '20px';
 		}
 
 		const delayModifier = bindings.modifiers['delay']
@@ -20,7 +18,6 @@ export default {
 			const arg = bindings.arg
 			el.style[arg] = bindings.value
 
-			console.log()
 			if (arg === 'background' && bindings.value === 'blue') {
 				el.style.color = 'white'
 			}

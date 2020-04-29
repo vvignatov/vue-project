@@ -62,6 +62,11 @@
 				<p slot="text" class="green">Text from parent</p>
 			</app-car-html>
 		</root-component>
+
+		<root-component :title="'8. Создание своей директивы'">
+			<app-directives>
+			</app-directives>
+		</root-component>
 	</div>
 </template>
 
@@ -76,7 +81,7 @@ import Child2 from './components/Child2.vue'
 import ChildEmitter1 from './components/ChildEmitter1'
 import ChildEmitter2 from './components/ChildEmitter2'
 import CarHtml from './components/CarHtml.vue'
-// import Directives from './components/Directives.vue'
+import Directives from './components/Directives.vue'
 // import Filters from './components/Filters.vue'
 
 export default {
@@ -123,8 +128,8 @@ export default {
 		appChild2: Child2,
 		appChildEmitter1: ChildEmitter1,
 		appChildEmitter2: ChildEmitter2,
-		appCarHtml: CarHtml
-		// appDirectives: Directives,
+		appCarHtml: CarHtml,
+		appDirectives: Directives
 		// appFilters: Filters,
 	}
 }
