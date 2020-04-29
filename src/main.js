@@ -4,7 +4,7 @@ import colorDirective from './directives/colorDirective'
 
 Vue.directive('colored', colorDirective)
 
-
+// Новый объект vue для связывания событий.
 export const eventEmitter = new Vue();
 
 new Vue({

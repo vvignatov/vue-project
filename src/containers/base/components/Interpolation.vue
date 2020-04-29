@@ -16,7 +16,7 @@ export default {
 			name: 'Vue!',
 			number: 100,
 			isOk: true,
-			string: 'My name is Vitalik'
+			string: 'My name is Vue'
 		}
 	},
 	methods: {

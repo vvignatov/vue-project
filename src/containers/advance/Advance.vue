@@ -8,7 +8,7 @@
 			<app-valid :carName="carValid.name" :carYear="carValid.year"></app-valid>
 		</root-component>
 
-		<root-component :title="'3. Передача параметров от дочернего компонента (emit)'">
+		<root-component :title="'3. Передача параметров от дочернего компонента ($emit)'">
 			<p>Parent name: {{ carEmit.name }}</p>
 			<app-car-emit
 				:carName="carEmit.name"
@@ -40,6 +40,20 @@
 				@counterUpdate="counter = $event"
 			></app-child1>
 		</root-component>
+
+		<root-component :title="'6. Использование event emitter'">
+			<!-- Заводим новый объект vue (const eventEmitter в main.js). Свойство counter остается только в компоненте счетчика -->
+			<p>Компонент 1</p>
+			<app-child-emitter2></app-child-emitter2>
+
+			<hr>
+
+			<p>Компонент 2</p>
+			<app-child-emitter1
+				:carName="carChild.name"
+				:carYear="carChild.year"
+			></app-child-emitter1>
+		</root-component>
 	</div>
 </template>
 
@@ -51,6 +65,8 @@ import CarEmit from './components/CarEmit.vue'
 import CarPropsFunc from './components/CarPropsFunc.vue'
 import Child1 from './components/Child1.vue'
 import Child2 from './components/Child2.vue'
+import ChildEmitter1 from './components/ChildEmitter1'
+import ChildEmitter2 from './components/ChildEmitter2'
 // import Directives from './components/Directives.vue'
 // import Filters from './components/Filters.vue'
 
@@ -92,7 +108,9 @@ export default {
 		appCarEmit: CarEmit,
 		appCarPropsFunc: CarPropsFunc,
 		appChild1: Child1,
-		appChild2: Child2
+		appChild2: Child2,
+		appChildEmitter1: ChildEmitter1,
+		appChildEmitter2: ChildEmitter2
 		// appDirectives: Directives,
 		// appFilters: Filters,
 	}
