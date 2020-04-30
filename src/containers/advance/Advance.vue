@@ -67,6 +67,12 @@
 			<app-directives>
 			</app-directives>
 		</root-component>
+
+		<root-component :title="'9. Создание простых фильтров'">
+			<app-filters>
+			</app-filters>
+		</root-component>
+
 	</div>
 </template>
 
@@ -82,7 +88,7 @@ import ChildEmitter1 from './components/ChildEmitter1'
 import ChildEmitter2 from './components/ChildEmitter2'
 import CarHtml from './components/CarHtml.vue'
 import Directives from './components/Directives.vue'
-// import Filters from './components/Filters.vue'
+import Filters from './components/Filters.vue'
 
 export default {
 	data() {
@@ -129,8 +135,8 @@ export default {
 		appChildEmitter1: ChildEmitter1,
 		appChildEmitter2: ChildEmitter2,
 		appCarHtml: CarHtml,
-		appDirectives: Directives
-		// appFilters: Filters,
+		appDirectives: Directives,
+		appFilters: Filters
 	}
 }
 </script>

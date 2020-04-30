@@ -1,6 +1,6 @@
 <template>
 	<div class="directives">
-		<!-- Директива v-colored подключается в файле main.js -->
+		<!-- Директива v-colored объявляется глобально в файле main.js -->
 		<p v-show="visible" v-colored:background.font="'blue'">{{ title }}</p>
 
 		<p v-colored:color.font.delay="'blue'">{{ title2 }}</p>
@@ -29,7 +29,7 @@ export default {
 	data() {
 		return {
 			title: 'Hello i am vue',
-			title2: 'Hello again',
+			title2: 'Hello with delay',
 			visible: true
 		}
 	},

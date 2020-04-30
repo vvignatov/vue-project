@@ -2,6 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import colorDirective from './directives/colorDirective'
 
+// Глобальный фильтр uppercase
+Vue.filter('uppercase', value => value.toUpperCase())
+
+// Глобальньая директива v-colored
 Vue.directive('colored', colorDirective)
 
 // Новый объект vue для связывания событий.
