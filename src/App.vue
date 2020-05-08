@@ -41,8 +41,13 @@ export default {
 		font-family: sans-serif;
 		color: #333;
 	}
+	html {
+	}
 	a {
 		color:blue;
+	}
+	button {
+		font-size: 14px;
 	}
 	button:disabled {
 		color: gainsboro;

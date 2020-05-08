@@ -1,6 +1,12 @@
 import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+
 import App from './App.vue'
+
 import colorDirective from './directives/colorDirective'
+
+// Поключаем библиотеку Vuelidate
+Vue.use(Vuelidate)
 
 // Глобальный фильтр uppercase
 Vue.filter('uppercase', value => value.toUpperCase())

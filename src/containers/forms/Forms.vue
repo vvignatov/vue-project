@@ -31,6 +31,10 @@
 			<p v-if="switched">Component is enabled</p>
 			<p v-else>Component is disabled</p>
 		</root-component>
+
+		<root-component :title="'8. Валидация форм с vuelidate'">
+			<app-validate></app-validate>
+		</root-component>
 	</div>
 </template>
 
@@ -41,6 +45,7 @@ import Radio from './components/Radio.vue'
 import Select from './components/Select.vue'
 import Intmod from './components/Intmod.vue'
 import Control from './components/Control.vue'
+import Validate from './components/Validate.vue'
 
 
 export default {
@@ -57,7 +62,8 @@ export default {
 		appRadio: Radio,
 		appSelect: Select,
 		appIntmod: Intmod,
-		appControl: Control
+		appControl: Control,
+		appValidate: Validate
 	}
 }
 </script>
