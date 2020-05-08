@@ -35,6 +35,10 @@
 		<root-component :title="'8. Валидация форм с vuelidate'">
 			<app-validate></app-validate>
 		</root-component>
+
+		<root-component :title="'9. Кастомная валидация форм с vuelidate(uniqEmail)'">
+			<app-custom-validate></app-custom-validate>
+		</root-component>
 	</div>
 </template>
 
@@ -46,6 +50,7 @@ import Select from './components/Select.vue'
 import Intmod from './components/Intmod.vue'
 import Control from './components/Control.vue'
 import Validate from './components/Validate.vue'
+import CustomValidate from './components/CustomValidate.vue'
 
 
 export default {
@@ -63,7 +68,8 @@ export default {
 		appSelect: Select,
 		appIntmod: Intmod,
 		appControl: Control,
-		appValidate: Validate
+		appValidate: Validate,
+		appCustomValidate: CustomValidate
 	}
 }
 </script>
