@@ -1,37 +1,39 @@
 <template>
 	<div>
 		<h1 class="title">{{ pageTitle }}</h1>
+		<ul class="nav justify-content-center mb-3">
+			<li class="nav-item">
+				<router-link class="nav-link text-secondary" to="/" active-class="active" exact>Базовые</router-link>
+			</li>
+			<li class="nav-item">
+				<router-link class="nav-link text-secondary" to="/advance" active-class="active">Дополнительные</router-link>
+			</li>
+			<li class="nav-item">
+				<router-link class="nav-link text-secondary" to="forms" active-class="active">Работа с формами</router-link>
+			</li>
+			<li class="nav-item">
+				<router-link class="nav-link text-secondary disabled" to="#" tabindex="-1" aria-disabled="true" active-class="active">Анимация</router-link>
+			</li>
+		</ul>
 
-		<div class="center  p-20">
-			<button @click="current = 'base'">Базовые</button>
-			<button @click="current = 'advance'">Дополнительные</button>
-			<button @click="current = 'forms'">Работа с формами</button>
-			<button :disabled="true">Анимация</button>
-		</div>
+		<!-- Альтернативная ссылка с вложенным компонентом -->
+		<!-- <router-link tag="li" class="your-class" to="advance" active-class="active">
+			<a>Дополнительные</a>
+		</router-link> -->
 
-		<app-base v-if="current === 'base'"></app-base>
-		<app-advance v-if="current === 'advance'"></app-advance>
-		<app-forms v-if="current === 'forms'"></app-forms>
+		<!-- контент роута -->
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-import Base from './containers/base/Base.vue'
-import Advance from './containers/advance/Advance.vue'
-import Forms from './containers/forms/Forms.vue'
 
 
 export default {
 	data() {
 		return {
 			pageTitle: 'Основные примеры синтаксиса Vue.js',
-			current: 'forms'
 		}
-	},
-	components: {
-		appBase: Base,
-		appAdvance: Advance,
-		appForms: Forms
 	}
 }
 </script>
@@ -52,12 +54,18 @@ export default {
 	button:disabled {
 		color: gainsboro;
 	}
+	.nav-link.active {
+		text-decoration: underline;
+	}
+	.nav-link.disabled {
+		opacity: .5;
+	}
 	.center {
 		text-align: center;
 	}
 	.title {
 		padding: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 0;
 		font-size: 40px;
 		text-align: center;
 	}
