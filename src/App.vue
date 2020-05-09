@@ -12,6 +12,9 @@
 				<router-link class="nav-link text-secondary" to="forms" active-class="active">Работа с формами</router-link>
 			</li>
 			<li class="nav-item">
+				<router-link class="nav-link text-secondary" to="/routes" active-class="active">Роуты</router-link>
+			</li>
+			<li class="nav-item">
 				<router-link class="nav-link text-secondary disabled" to="#" tabindex="-1" aria-disabled="true" active-class="active">Анимация</router-link>
 			</li>
 		</ul>

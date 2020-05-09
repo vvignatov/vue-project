@@ -3,7 +3,9 @@
 import VueRouter from 'vue-router'
 import Base from './containers/base/Base'
 import Advance from './containers/advance/Advance'
-import Forms from './containers/forms/Forms.vue'
+import Forms from './containers/forms/Forms'
+import RoutesPage from './containers/routes/RoutesPage'
+import RoutesCar from './containers/routes/RoutesCar'
 
 export default new VueRouter({
 	routes: [
@@ -18,6 +20,14 @@ export default new VueRouter({
 		{
 			path: '/forms',
 			component: Forms
+		},
+		{
+			path: '/routes',
+			component: RoutesPage
+		},
+		{
+			path: '/car/:id', // Динамический роут
+			component: RoutesCar
 		}
 	],
 	mode: 'history'
