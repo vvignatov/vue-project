@@ -1,26 +1,35 @@
 <template>
 	<root-component>
 		<h3>Current car page id: {{ id }}</h3>
+		<button class="btn btn-small btn-info" @click="goBackToCars">Back</button>
+
 		<p>Other car pages:</p>
-		<router-link
+		<ul>
+			<router-link
 			tag="li"
 			v-for="car in 5"
 			:to="'/car/' + car"
 			:key="car"
-		>
-			<a>Car: {{ car }}</a>
-		</router-link>
+			>
+				<a>Car: {{ car }}</a>
+			</router-link>
+		</ul>
 	</root-component>
 </template>
 
 <script>
-import Component from './../../hoc/Component.vue'
+import Component from './../../../hoc/Component.vue'
 
 
 export default {
 	data() {
 		return {
 			id: this.$router.currentRoute.params['id']
+		}
+	},
+	methods: {
+		goBackToCars() {
+			this.$router.push('/routes')
 		}
 	},
 	components: {
@@ -35,6 +44,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+	.btn {
+		margin-bottom: 20px;
+	}
 </style>
