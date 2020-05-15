@@ -1,7 +1,22 @@
 <template>
 	<root-component>
 		<h3>Current car page id: {{ id }}</h3>
-		<button class="btn btn-small btn-info" @click="goBackToCars">Back</button>
+		<button class="btn btn-small btn-secondary" @click="goBackToCars">Back</button>
+		<!-- <router-link
+			class="btn btn-small btn-info"
+			tag="button"
+			:to="'/car/' + id + '/full'"
+		>Full info</router-link> -->
+		<router-link
+			class="btn btn-small btn-info"
+			tag="button"
+			:to="{name: 'carFull', params: {id: id}, query: {name: 'Mazda', year: 2000}}"
+		>Full info</router-link>
+
+		<!-- указатель для вложенных роутов -->
+		<router-view></router-view>
+
+		<hr>
 
 		<p>Other car pages:</p>
 		<ul>
@@ -14,6 +29,8 @@
 				<a>Car: {{ car }}</a>
 			</router-link>
 		</ul>
+
+
 	</root-component>
 </template>
 

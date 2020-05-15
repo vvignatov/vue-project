@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<root-component :title="'1. Динамические роуты и программная навигация'">
+		<root-component :title="'1. Динамические роуты'">
+			<p>Программная навигация, вложенные роуты, передача параметров</p>
 			<app-dynamic></app-dynamic>
 		</root-component>
 

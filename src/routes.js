@@ -5,8 +5,8 @@ import Base from './containers/base/Base'
 import Advance from './containers/advance/Advance'
 import Forms from './containers/forms/Forms'
 import RoutesPage from './containers/routes/RoutesPage'
-// import RoutesCar from './containers/routes/RoutesCar'
 import DynamicRoutesCar from './containers/routes/components/DynamicRoutesCar'
+import NestedRoutes from './containers/routes/components/NestedRoutes'
 
 export default new VueRouter({
 	routes: [
@@ -28,7 +28,14 @@ export default new VueRouter({
 		},
 		{
 			path: '/car/:id', // Динамический роут
-			component: DynamicRoutesCar
+			component: DynamicRoutesCar,
+			children: [ // вложенные роуты
+				{
+					path: 'full',
+					component: NestedRoutes,
+					name: 'carFull'
+				}
+			]
 		}
 	],
 	mode: 'history'
