@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<p>Создание объектов POST</p>
+		<h5>Создание объектов POST:</h5>
 		<div class="row">
 			<div class="col-4">
 				<div class="form-group">
@@ -16,6 +16,28 @@
 				<button class="btn btn-success" @click="createCar">Create car</button>
 			</div>
 		</div>
+		<hr>
+
+		<h5>Получение объектов GET:</h5>
+		<div class="row">
+			<div class="col-4">
+				<ul class="list-group mb-3">
+					<li
+						class="list-group-item"
+						v-if="!cars.length"
+					>Get new cars list</li>
+					<li
+						class="list-group-item"
+						v-else
+						v-for="car of cars"
+						:key="car.id"
+					><strong>{{ car.name }}</strong> - {{ car.year }}</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<button class="btn btn-success btn-lg" @click="loadCars">Load cars</button>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -24,7 +46,8 @@ export default {
 	data() {
 		return {
 			carName: '',
-			carYear: ''
+			carYear: '',
+			cars: []
 		}
 	},
 	methods: {
@@ -40,6 +63,15 @@ export default {
 				})
 				.then(newCar => {
 					console.log(newCar)
+				})
+		},
+		loadCars() {
+			this.$http.get('http://localhost:3000/cars')
+				.then(response => {
+					return response.json()
+				})
+				.then(cars => {
+					this.cars = cars
 				})
 		}
 	}
