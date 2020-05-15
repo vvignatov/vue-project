@@ -1,0 +1,30 @@
+<template>
+	<div>
+		<root-component :title="'1. Vue-router'">
+			<p>Динамические роуты, программная навигация, вложенные роуты, передача параметров, хэш, редирект, защита роутов(guards)</p>
+			<app-routes></app-routes>
+		</root-component>
+
+		<root-component :title="'2. Vue-resource'">
+		</root-component>
+
+		<root-component :title="'3. Vuex'">
+		</root-component>
+	</div>
+</template>
+
+<script>
+import Component from './../../hoc/Component.vue'
+import Routes from './components/Routes.vue'
+
+export default {
+	components: {
+		rootComponent: Component,
+		appRoutes: Routes,
+	}
+}
+</script>
+
+<style>
+
+</style>

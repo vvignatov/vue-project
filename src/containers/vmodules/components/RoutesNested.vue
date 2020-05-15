@@ -15,6 +15,10 @@ export default {
 		year() {
 			return this.$route.query.year
 		}
+	},
+	beforeRouteEnter (to, from, next) { // метод вызывается перед тем, как зайти на текущий роут
+		console.log('beforeRouteEnter')
+		next(true)
 	}
 }
 </script>

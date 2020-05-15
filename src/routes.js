@@ -4,10 +4,12 @@ import VueRouter from 'vue-router'
 import Base from './containers/base/Base'
 import Advance from './containers/advance/Advance'
 import Forms from './containers/forms/Forms'
-import RoutesPage from './containers/routes/RoutesPage'
-import DynamicRoutesCar from './containers/routes/components/DynamicRoutesCar'
-import NestedRoutes from './containers/routes/components/NestedRoutes'
-import ErrorCmp from './containers/routes/components/404'
+import Cmp404 from './containers/Cmp404'
+
+// компоненты vmodules
+import Vmodules from './containers/vmodules/Vmodules'
+import RoutesCar from './containers/vmodules/components/RoutesCar'
+import RoutesNested from './containers/vmodules/components/RoutesNested'
 
 export default new VueRouter({
 	routes: [
@@ -24,17 +26,21 @@ export default new VueRouter({
 			component: Forms
 		},
 		{
-			path: '/routes',
-			component: RoutesPage
+			path: '/modules',
+			component: Vmodules
 		},
 		{
 			path: '/car/:id', // Динамический роут
-			component: DynamicRoutesCar,
+			component: RoutesCar,
 			children: [ // вложенные роуты
 				{
 					path: 'full',
-					component: NestedRoutes,
-					name: 'carFull'
+					component: RoutesNested,
+					name: 'carFull',
+					beforeEnter(to, from, next) { // метод вызывается перед тем, как зайти на текущий роут
+						console.log('enter')
+						next()
+					}
 				}
 			]
 		},
@@ -44,7 +50,7 @@ export default new VueRouter({
 		},
 		{
 			path: '*',
-			component: ErrorCmp
+			component: Cmp404
 		}
 	],
 	mode: 'history',
@@ -52,10 +58,5 @@ export default new VueRouter({
 		if (to.hash) {
 			return { selector: to.hash }
 		}
-
-		// return {
-		// 	x: 0,
-		// 	y: 0
-		// }
 	}
 })

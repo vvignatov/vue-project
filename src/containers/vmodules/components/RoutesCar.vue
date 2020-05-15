@@ -48,7 +48,7 @@ export default {
 	},
 	methods: {
 		goBackToCars() {
-			this.$router.push('/routes')
+			this.$router.push('/modules')
 		}
 	},
 	components: {
@@ -59,6 +59,14 @@ export default {
 			// При незначительных изменениях в path, нужно отслеживать изменения id в ручную
 			this.id = toR.params['id']
 		}
+	},
+	beforeRouteLeave (to, from, next) {
+		console.log('beforeRouteLeave')
+
+		if (window.confirm('Are you sure you want to leave?')) {
+			next(true)
+		}
+
 	}
 }
 </script>
