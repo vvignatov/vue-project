@@ -3,6 +3,9 @@
 		<!-- Передача параметров через route -->
 		<p>Car name: {{ $route.query.name }}</p>
 		<p>Car year: {{ year }}</p>
+
+		<div class="scroll"></div>
+		<h6 id="scroll">Hello from the bottom</h6>
 	</div>
 </template>
 
@@ -16,6 +19,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+	.scroll {
+		width: 100px;
+		height: 1000px;
+		background-color: #ccc;
+	}
 
 </style>

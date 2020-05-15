@@ -1,12 +1,11 @@
 <template>
 	<div>
 		<root-component :title="'1. Динамические роуты'">
-			<p>Программная навигация, вложенные роуты, передача параметров</p>
+			<p>Программная навигация, вложенные роуты, передача параметров, хэш</p>
 			<app-dynamic></app-dynamic>
 		</root-component>
 
 		<root-component :title="'2. Вложенные роуты'">
-			<app-nested></app-nested>
 		</root-component>
 	</div>
 </template>

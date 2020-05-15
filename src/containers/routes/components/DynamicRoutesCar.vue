@@ -2,18 +2,20 @@
 	<root-component>
 		<h3>Current car page id: {{ id }}</h3>
 		<button class="btn btn-small btn-secondary" @click="goBackToCars">Back</button>
-		<!-- <router-link
-			class="btn btn-small btn-info"
-			tag="button"
-			:to="'/car/' + id + '/full'"
-		>Full info</router-link> -->
+
+		<!-- в директиву "to" передаем данные:
+			name - имя дочернего компонента в routes.js
+			params - id текущего элемента
+			query - параметры ссылки после знака "?"
+			hash - хэш ссылки после знака "#"  -->
+		<!-- Для сколла страницы по хэшу см. scrollBehavior в routes.js -->
 		<router-link
 			class="btn btn-small btn-info"
 			tag="button"
-			:to="{name: 'carFull', params: {id: id}, query: {name: 'Mazda', year: 2000}}"
+			:to="{name: 'carFull', params: {id: id}, query: {name: 'Mazda', year: 2000}, hash: '#scroll'}"
 		>Full info</router-link>
 
-		<!-- указатель для вложенных роутов -->
+		<!-- указатель для вложенных роутов(see routes.js - children field) -->
 		<router-view></router-view>
 
 		<hr>

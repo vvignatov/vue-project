@@ -38,5 +38,15 @@ export default new VueRouter({
 			]
 		}
 	],
-	mode: 'history'
+	mode: 'history',
+	scrollBehavior (to, from, savedPosition) { // callback метод вызывается при переходе по ссылке
+		if (to.hash) {
+			return { selector: to.hash }
+		}
+
+		// return {
+		// 	x: 0,
+		// 	y: 0
+		// }
+	}
 })
