@@ -7,6 +7,7 @@ import Forms from './containers/forms/Forms'
 import RoutesPage from './containers/routes/RoutesPage'
 import DynamicRoutesCar from './containers/routes/components/DynamicRoutesCar'
 import NestedRoutes from './containers/routes/components/NestedRoutes'
+import ErrorCmp from './containers/routes/components/404'
 
 export default new VueRouter({
 	routes: [
@@ -36,10 +37,18 @@ export default new VueRouter({
 					name: 'carFull'
 				}
 			]
+		},
+		{
+			path: '/none',
+			redirect: '/'
+		},
+		{
+			path: '*',
+			component: ErrorCmp
 		}
 	],
 	mode: 'history',
-	scrollBehavior (to, from, savedPosition) { // callback метод вызывается при переходе по ссылке
+	scrollBehavior (to, from, savedPosition) { // callback метод вызывается при переходе
 		if (to.hash) {
 			return { selector: to.hash }
 		}
