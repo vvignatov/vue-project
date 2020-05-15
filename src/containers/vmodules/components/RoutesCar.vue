@@ -61,8 +61,6 @@ export default {
 		}
 	},
 	beforeRouteLeave (to, from, next) {
-		console.log('beforeRouteLeave')
-
 		if (window.confirm('Are you sure you want to leave?')) {
 			next(true)
 		}

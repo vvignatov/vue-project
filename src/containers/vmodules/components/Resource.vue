@@ -47,7 +47,8 @@ export default {
 		return {
 			carName: '',
 			carYear: '',
-			cars: []
+			cars: [],
+			resource: null
 		}
 	},
 	methods: {
@@ -57,23 +58,35 @@ export default {
 				year: this.carYear
 			}
 
-			this.$http.post('http://localhost:3000/cars', car)
-				.then(response => {
-					return response.json()
-				})
-				.then(newCar => {
-					console.log(newCar)
-				})
+			// лаконичный метод библиотеки resource
+			this.resource.save({}, car)
+
+			// this.$http.post('http://localhost:3000/cars', car)
+			// 	.then(response => {
+			// 		return response.json()
+			// 	})
+			// 	.then(newCar => {
+			// 		console.log(newCar)
+			// 	})
+			// console.log(this.resource)
 		},
 		loadCars() {
-			this.$http.get('http://localhost:3000/cars')
-				.then(response => {
-					return response.json()
-				})
-				.then(cars => {
-					this.cars = cars
-				})
-		}
+			// более лаконичный метод библиотеки resource
+			this.resource.get().then(responce => responce.json())
+				.then(cars => this.cars = cars)
+
+			// пример использования http
+			// this.$http.get('http://localhost:3000/cars')
+			// 	.then(response => {
+			// 		return response.json()
+			// 	})
+			// 	.then(cars => {
+			// 		this.cars = cars
+			// 	})
+		},
+	},
+	created() {
+		this.resource = this.$resource('cars')
 	}
 }
 </script>

@@ -5,7 +5,7 @@
 			<app-routes></app-routes>
 		</root-component>
 
-		<root-component :title="'2. Vue-resource (работа с сервером)'">
+		<root-component :title="'2. Vue-resource (работа с сервером)'" :link="'https://github.com/pagekit/vue-resource'">
 			<app-resource></app-resource>
 		</root-component>
 

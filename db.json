@@ -9,6 +9,11 @@
       "name": "Mazda",
       "year": 2020,
       "id": 2
+    },
+    {
+      "name": "Kia",
+      "year": 2017,
+      "id": 3
     }
   ]
 }

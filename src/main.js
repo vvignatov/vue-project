@@ -11,8 +11,12 @@ import colorDirective from './directives/colorDirective'
 // Поключаем библиотеку VueResource
 Vue.use(VueResource)
 
-// Поключаем библиотеку Vuelidate
+// Поключаем библиотеку Vuelidate и определяем url
 Vue.use(Vuelidate)
+Vue.http.options.root = 'http://localhost:3000/'
+Vue.http.interceptors.push(request => {
+	request.headers.set('Auth', 'RAND TOKEN' + Math.random())
+})
 
 // Поключаем библиотеку Vuerouter
 Vue.use(VueRouter)
