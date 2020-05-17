@@ -10,7 +10,7 @@
 		</root-component>
 
 		<root-component :title="'3. Vuex'">
-			<p>Состояние counter хранится в vuex($store.state)</p>
+			<p>Состояние counter хранится в vuex($store)</p>
 			<app-counter></app-counter>
 			<app-second-counter></app-second-counter>
 			<hr>
