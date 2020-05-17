@@ -10,6 +10,8 @@
 		</root-component>
 
 		<root-component :title="'3. Vuex'">
+			<app-counter :counter="counter"></app-counter>
+			<app-action @counterUpdate="counter += $event"></app-action>
 		</root-component>
 	</div>
 </template>
@@ -18,12 +20,21 @@
 import Component from './../../hoc/Component.vue'
 import Routes from './components/Routes.vue'
 import Resource from './components/Resource.vue'
+import VuexCounter from './components/VuexCounter.vue'
+import VuexAction from './components/VuexAction.vue'
 
 export default {
+	data() {
+		return {
+			counter: 0
+		}
+	},
 	components: {
 		rootComponent: Component,
 		appRoutes: Routes,
-		appResource: Resource
+		appResource: Resource,
+		appCounter: VuexCounter,
+		appAction: VuexAction
 	}
 }
 </script>

@@ -8,6 +8,8 @@ import App from './App.vue'
 
 import colorDirective from './directives/colorDirective'
 
+import store from './store'
+
 // Поключаем библиотеку VueResource
 Vue.use(VueResource)
 
@@ -33,6 +35,7 @@ export const eventEmitter = new Vue();
 new Vue({
 	el: '#app',
 	render: h => h(App),
+	store,
 	router // подключение файла роутов
 })
 

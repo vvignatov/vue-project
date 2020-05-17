@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<h5>Создание объектов POST:</h5>
+		<h5>Для взаимодействия нужно запустить локальный сервер(npm run server)</h5>
+		<p>Создание объектов POST:</p>
 		<div class="row">
 			<div class="col-4">
 				<div class="form-group">
@@ -18,7 +19,7 @@
 		</div>
 		<hr>
 
-		<h5>Получение объектов GET:</h5>
+		<p>Получение объектов GET:</p>
 		<div class="row">
 			<div class="col-4">
 				<ul class="list-group mb-3">
