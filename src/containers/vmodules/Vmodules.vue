@@ -10,8 +10,9 @@
 		</root-component>
 
 		<root-component :title="'3. Vuex'">
-			<app-counter :counter="counter"></app-counter>
-			<app-action @counterUpdate="counter += $event"></app-action>
+			<p>Состояние counter хранится в vuex($store.state)</p>
+			<app-counter></app-counter>
+			<app-action ></app-action>
 		</root-component>
 	</div>
 </template>
@@ -24,11 +25,6 @@ import VuexCounter from './components/VuexCounter.vue'
 import VuexAction from './components/VuexAction.vue'
 
 export default {
-	data() {
-		return {
-			counter: 0
-		}
-	},
 	components: {
 		rootComponent: Component,
 		appRoutes: Routes,

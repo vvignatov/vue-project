@@ -9,7 +9,7 @@
 export default {
 	methods: {
 		updateCounter(value) {
-			this.$emit('counterUpdate', value)
+			this.$store.state.counter += value
 		}
 	}
 }
