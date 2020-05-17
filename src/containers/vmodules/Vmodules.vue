@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<root-component :title="'1. Vue-router (работа с ссылками)'">
+		<root-component :title="'1. Vue-router (работа со ссылками)'">
 			<p>Динамические роуты, программная навигация, вложенные роуты, передача параметров, хэш, редирект, защита роутов(guards)</p>
 			<app-routes></app-routes>
 		</root-component>
@@ -12,6 +12,8 @@
 		<root-component :title="'3. Vuex'">
 			<p>Состояние counter хранится в vuex($store.state)</p>
 			<app-counter></app-counter>
+			<app-second-counter></app-second-counter>
+			<hr>
 			<app-action ></app-action>
 		</root-component>
 	</div>
@@ -23,6 +25,7 @@ import Routes from './components/Routes.vue'
 import Resource from './components/Resource.vue'
 import VuexCounter from './components/VuexCounter.vue'
 import VuexAction from './components/VuexAction.vue'
+import VuexSecondCounter from './components/VuexSecondCounter.vue'
 
 export default {
 	components: {
@@ -30,7 +33,8 @@ export default {
 		appRoutes: Routes,
 		appResource: Resource,
 		appCounter: VuexCounter,
-		appAction: VuexAction
+		appAction: VuexAction,
+		appSecondCounter: VuexSecondCounter
 	}
 }
 </script>

@@ -6,5 +6,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		counter: 10
+	},
+	getters: {
+		computedCounter(state) {
+			return state.counter * 10
+		}
 	}
 })

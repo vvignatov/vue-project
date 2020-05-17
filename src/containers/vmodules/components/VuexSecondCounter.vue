@@ -1,5 +1,5 @@
 <template>
-	<p>Counter: {{ counter }}</p>
+	<p>Second Counter: {{ counter }}</p>
 </template>
 
 <script>
