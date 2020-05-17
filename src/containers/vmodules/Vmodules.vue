@@ -15,6 +15,8 @@
 			<app-second-counter></app-second-counter>
 			<hr>
 			<app-action ></app-action>
+			<hr>
+			<p>{{ title }}</p>
 		</root-component>
 	</div>
 </template>
@@ -28,6 +30,11 @@ import VuexAction from './components/VuexAction.vue'
 import VuexSecondCounter from './components/VuexSecondCounter.vue'
 
 export default {
+	computed: {
+		title() {
+			return this.$store.state.title
+		}
+	},
 	components: {
 		rootComponent: Component,
 		appRoutes: Routes,
